@@ -3,5 +3,5 @@ def call() {
             docker run \
             -e SEMGREP_APP_TOKEN=$SEMGREP_APP_TOKEN \
             -v "$(pwd):$(pwd)" --workdir $(pwd) \
-            semgrep/semgrep  apk add openjdk23-jdk maven && semgrep ci --allow-local-builds '''
+            semgrep/semgrep  apk update && apk add openjdk23-jdk maven && semgrep ci --allow-local-builds '''
 }
