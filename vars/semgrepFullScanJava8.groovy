@@ -5,8 +5,7 @@ def call() {
             -v "$(pwd):$(pwd)" --workdir $(pwd) \
             semgrep/semgrep  \
             sh \
-            -c "echo "https://dl-cdn.alpinelinux.org/alpine/edge/testing">>/etc/apk/repositories && \
-            apk update && \
+            -c "echo "apk update && \
             apk add openjdk8 maven && \
             semgrep ci --allow-local-builds"
      '''
